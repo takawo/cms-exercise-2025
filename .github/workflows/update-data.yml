@@ -1,19 +1,15 @@
 name: Update Assignment Data
 
+# 現在は静的JSONファイルを使用しているため、このワークフローは無効化されています
+# 将来的にNotionからデータを取得する必要がある場合は、このワークフローを有効化してください
+
 on:
-  workflow_dispatch: # 手動実行
-  schedule:
-    # 毎日午前9時（JST）に実行
-    - cron: '0 0 * * *'
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/update-data.yml'
+  workflow_dispatch: # 手動実行のみ（スケジュールとpushトリガーは無効化）
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    if: false  # 常にスキップ
     steps:
       - name: Checkout
         uses: actions/checkout@v4
