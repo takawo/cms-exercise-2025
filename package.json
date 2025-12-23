@@ -1,0 +1,21 @@
+{
+  "name": "notion-assignment-viewer",
+  "version": "1.0.0",
+  "description": "Notion APIを使用して課題提出データを表示するWebアプリケーション",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "keywords": ["notion", "api", "assignment"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5"
+  }
+}
+

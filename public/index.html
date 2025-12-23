@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="メディア表現発展演習Ⅰ（2025）の課題一覧">
+    <meta name="theme-color" content="#667eea">
+    <title>メディア表現発展演習Ⅰ（2025）課題：ルールに基づいてペンで絵を描く</title>
+    <!-- Google Fonts: Noto Sans Japanese -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- プリコネクトでパフォーマンス最適化 -->
+    <link rel="preconnect" href="https://www.notion.so">
+    <!-- API設定 -->
+    <script src="config.js"></script>
+</head>
+
+<body>
+    <div class="header-overview-card">
+        <div class="container">
+            <header>
+                <h1>メディア表現発展演習Ⅰ</h1>
+                <h2>課題：ルールに基づいてペンで絵を描く</h2>
+            </header>
+            <section class="overview">
+                <div class="overview-content">
+                    <div class="overview-summary">
+                        <p>メディア表現発展演習Ⅰは学科2年次の必修科目です。課題「ルールに基づいてペンで絵を描く」は全13回の授業のうち、4回で実施しました。</p>
+                        <p>本課題は、プログラムを介したジェネラティブアートや情報可視化のようなデジタルによる表現の準備段階として設定し、プログラミング的思考やデジタルデザインにおける構造理解を目的とした基礎的な演習です。この課題を通じて、表現が感覚的・恣意的な判断のみに依存するのではなく、明示的なルールや構造によって生成され得ること、またその中に偶然性が介在することで多様な結果が生まれることを、体験的に理解することを目的としています。
+                        </p>
+                    </div>
+                    <button class="toggle-overview" id="toggleOverview" aria-label="授業の狙いを表示">
+                        <span class="toggle-text">授業の詳細</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="header-overview-spacer visible"></div>
+    <div class="container">
+
+        <!-- モーダル（授業内容表示用） -->
+        <div id="courseModal" class="modal">
+            <div class="modal-content-wrapper">
+                <div class="modal-content">
+                    <span class="close-modal" id="closeModal">&times;</span>
+                    <div class="modal-body">
+                        <h2>課題「ルールに基づいてペンで絵を描く」</h2>
+                        <div class="overview-details">
+                            <p>この課題では、学生が自分で「ルール」を設定し、そのルールに従ってペンでポストカードに絵を描きました。自由に描くのではなく、あらかじめ決めたルール（例：「1日の中で歩いた歩数を線の本数で表現する」など）に基づいて描くことで、創造性と構造的思考の両方を学びます。
+                            </p>
+
+                            <p>授業では、個人制作だけでなく、グループワークや作品の講評も行いました。他の学生の作品と自分の作品を比較することで、同じルールでも人によって異なる表現が生まれることを実感し、表現の多様性を理解することを目指しました。
+                            </p>
+
+                            <h3>この授業で学ぶこと（授業の狙い）</h3>
+                            <ul>
+                                <li>制約があることで、かえって創造性が広がることを体験する</li>
+                                <li>絵を描く手順を言葉で説明できるようになる</li>
+                                <li>日常の出来事をルールに変換する力を身につける</li>
+                                <li>規則に基づいた「構成美」を言葉で説明できるようになる</li>
+                                <li>他の作品と比較して、自分の表現を見つめ直す</li>
+                                <li>手描きからデジタル制作へつなげる視点を獲得する</li>
+                            </ul>
+                            <a href="https://rapid-gander-363.notion.site/1870d23eb3fe81bb9938dfdf4c6a8d89?pvs=74"
+                                target="_blank" rel="noopener noreferrer" class="course-material-link">授業資料</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">データを読み込んでいます...</div>
+        <div id="error" class="error" style="display: none;"></div>
+
+        <!-- ギャラリービュー -->
+        <div id="galleryView" class="view">
+            <div id="assignmentsContainer" class="assignments-container"></div>
+        </div>
+
+        <!-- 詳細ビュー -->
+        <div id="detailView" class="view" style="display: none;">
+            <button id="backButton" class="back-button" aria-label="ギャラリーに戻る">← ギャラリーに戻る</button>
+            <div id="detailContainer" class="detail-container"></div>
+            <div id="detailNavigation" class="detail-navigation">
+                <button id="prevButton" class="nav-button prev-button" aria-label="前の課題">← PREV</button>
+                <button id="nextButton" class="nav-button next-button" aria-label="次の課題">NEXT →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
