@@ -122,6 +122,10 @@ const getTagCategory = (tag) => {
     if (['空間配置', '関係性', 'スケーリング', '順序性'].includes(tag)) {
         return 'spatial';
     }
+    // 【評価】
+    if (['教員による評価'].includes(tag)) {
+        return 'evaluation';
+    }
     return 'default';
 };
 
@@ -661,7 +665,7 @@ const showDetailView = (assignmentId) => {
         fullHeader.classList.add('hidden');
         compactHeader.classList.add('visible');
         isCompactMode = true; // 詳細ページでは常にコンパクトモード
-        
+
         // コンパクトヘッダーの高さに合わせてスペーサーを調整
         if (headerSpacer) {
             headerSpacer.classList.add('compact');
@@ -732,7 +736,7 @@ const showNextDetail = () => {
 const showGalleryView = () => {
     galleryView.style.display = 'block';
     detailView.style.display = 'none';
-    
+
     // ギャラリービューに戻ったら通常のヘッダー表示に戻す
     const fullHeader = document.getElementById('fullHeader');
     const compactHeader = document.getElementById('compactHeader');
@@ -761,12 +765,12 @@ const showGalleryView = () => {
             }
         }
     }
-    
+
     // タグフィルターを表示（ギャラリービューでは表示）
     if (tagFilterEl && allAssignments.length > 0) {
         tagFilterEl.style.display = 'block';
     }
-    
+
     window.location.hash = '';
 };
 
